@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./App.css"; // Ensure this contains the updated CSS
 
 const noPhrases = [
@@ -21,7 +21,6 @@ function App() {
   const [showFirstMessage, setShowFirstMessage] = useState(false); // Track if the "First Message" page is showing
   const [extraImagesStep, setExtraImagesStep] = useState(0); // Track the sequence of extra images
   const yesButtonSize = noCount * 20 + 16; // Yes button size grows based on No count
-  const [showFinalImage, setShowFinalImage] = useState(false); // Track if final image should be shown
   const [finalSlideState, setFinalSlideState] = useState(0); // Track the final slide state
 
   const extraImages = [
@@ -90,7 +89,6 @@ function App() {
     } else if (finalSlideState === 3) {
       // When Yes is pressed on state 3
       setFinalSlideState(4); // Go to final state 4 directly
-      setShowFinalImage(true); // Show the final "Yayyy" and GIF
       setCurrentQuestion(""); // Clear the current question
     }
     setNoCount(0); // Reset No count
